@@ -1,0 +1,95 @@
+@import "./variables.scss";
+
+.listing-card {
+  position: relative;
+  cursor: pointer;
+  padding: 5px; /* Reduced padding */
+  border-radius: 8px; /* Adjusted border radius */
+  max-width: 240px; /* Further reduced max-width for the card */
+  margin: 15px; /* Added margin to increase gap between cards */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Added transition for smooth hover effect */
+
+  &:hover {
+    transform: translateY(-5px); /* Move the card up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+
+  .slider-container {
+    width: 240px; /* Further reduced width */
+    overflow: hidden;
+    border-radius: 8px; /* Adjusted border radius */
+    margin-bottom: 8px; /* Reduced margin */
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+
+      .slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 200px; /* Further reduced height */
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          filter: brightness(85%);
+        }
+
+        .prev-button,
+        .next-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 4px; /* Reduced padding */
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.7);
+          z-index: 9999;
+
+          &:hover {
+            background-color: white;
+          }
+        }
+
+        .prev-button {
+          left: 8px; /* Adjusted positioning */
+        }
+
+        .next-button {
+          right: 8px; /* Adjusted positioning */
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 14px; /* Further reduced font size */
+  }
+
+  p {
+    font-size: 12px; /* Further reduced font size */
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 14px; /* Further reduced font size */
+  }
+
+  .favorite {
+    position: absolute;
+    right: 10px; /* Adjusted positioning */
+    top: 10px; /* Adjusted positioning */
+    border: none;
+    font-size: 16px; /* Further reduced icon size */
+    cursor: pointer;
+    z-index: 999;
+    background: none;
+  }
+}
